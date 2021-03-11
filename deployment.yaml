@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rule-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rule-test
+  template:
+    metadata:
+      labels:
+        app: rule-test
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+      - name: rule
+        image: lcastils/k8-test:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: rule-test
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+  labels:
+    app: rule-test
+spec:
+  type: ClusterIP
+  ports:
+    - name: rule-test
+      port: 8080
+  selector:
+    app: rule-test
