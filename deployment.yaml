@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - name: okteto
-        image: lcastils/k8-test:latest
+        image: docker.pkg.github.com/lcastils/okteto/okteto-image:sha-eb69c65
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
