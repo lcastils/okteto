@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - name: okteto
-        image: docker.pkg.github.com/lcastils/okteto/okteto-image:sha-eb69c65
+        image: docker.pkg.github.com/lcastils/okteto/okteto-image:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
