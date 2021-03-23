@@ -13,7 +13,7 @@ spec:
         app: okteto-test
     spec:
       imagePullSecrets:
-      - name: PAT  
+      - name: mysecretname  
       terminationGracePeriodSeconds: 0
       containers:
       - name: okteto
