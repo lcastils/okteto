@@ -52,7 +52,6 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@master
-      run: docker login docker.pkg.github.com -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
     - uses: okteto/login@master
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
