@@ -2,7 +2,7 @@ FROM openjdk:11-jdk-slim
 RUN mkdir -p /workspace
 WORKDIR /workspace
 
-COPY target/*.jar  /workspace/okteto.jar
+COPY /home/runner/work/okteto/okteto/target/*.jar  /workspace/okteto.jar
 
 EXPOSE 8080
 
