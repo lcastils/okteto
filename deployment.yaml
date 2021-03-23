@@ -12,8 +12,6 @@ spec:
       labels:
         app: okteto-test
     spec:
-      imagePullSecrets:
-      - name: okteto-regcred  
       terminationGracePeriodSeconds: 0
       containers:
       - name: okteto
@@ -21,6 +19,8 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+        - name: regcred
 
 ---
 
