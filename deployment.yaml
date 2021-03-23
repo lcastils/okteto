@@ -12,6 +12,8 @@ spec:
       labels:
         app: okteto-test
     spec:
+      imagePullSecrets:
+      - name: PAT  
       terminationGracePeriodSeconds: 0
       containers:
       - name: okteto

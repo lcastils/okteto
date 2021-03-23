@@ -73,7 +73,7 @@ jobs:
     - name: checkout
       uses: actions/checkout@master
     - name: Login to Docker Hub
-      run: docker login docker.pkg.github.com -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
+      run: cat ${{ secrets.DOCKER_PASS }} | docker login docker.pkg.github.com -u ${{ secrets.DOCKER_USER }} --password-stdin
     - uses: okteto/login@master
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
