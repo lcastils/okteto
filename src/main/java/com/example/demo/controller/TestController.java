@@ -8,7 +8,7 @@ public class TestController {
     
     @GetMapping("/")
     public String getMessage() {
-        return "hola mundo from cluster"; 
+        return "hola mundo from cluster" + "nuevo mensaje"; 
     }
 
 }
