@@ -61,6 +61,6 @@ jobs:
       with:
         namespace: lcastils
     - name: "Create deployment"
-      uses: okteto/apply@master-lcastils
+      uses: okteto/apply@lcastils
       with:
         manifest: deployment.yaml
